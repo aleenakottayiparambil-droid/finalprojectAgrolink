@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AgroLink AI - Consumer</title>
+
+    <link rel="stylesheet" href="consumer.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="logo-section">
+                <div class="logo-icon">🌱</div>
+
+                <div>
+                    <h2>AgroLink AI</h2>
+                    <span>CONSUMER PORTAL</span>
+                </div>
+            </div>
+
+            <nav>
+
+                <button class="nav-item active">
+                    🏠
+                    <span>Dashboard</span>
+                </button>
+
+                <button
+                  class="nav-item"
+                  onclick="window.location.href='marketplace.html'"
+>
+                  🛒
+                <span>Marketplace</span>
+                </button>
+
+                <button
+                    class="nav-item"
+                    onclick="window.location.href='orders.html'">
+                     📦
+                    <span>My Orders</span>
+                    </button>
+
+                <button
+    class="nav-item"
+    onclick="window.location.href='cart.html'">
+    🛍️
+    <span>Cart</span>
+</button>
+
+            </nav>
+
+            <button id="logoutBtn" class="logout-btn">
+                🚪 Logout
+            </button>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Top Bar -->
+            <header class="topbar">
+
+                <div>
+                    <h1 id="consumerName">
+                        Welcome
+                    </h1>
+
+                    <p>
+                        Discover fresh products directly from farmers.
+                    </p>
+                </div>
+
+                <div class="profile">
+                    <div class="profile-icon">
+                        👤
+                    </div>
+
+                    <span id="profileName">
+                        Consumer
+                    </span>
+                </div>
+
+            </header>
+
+
+            <!-- Statistics -->
+<section class="stats-grid">
+
+    <!-- Cart Items -->
+    <div class="stat-card">
+        <div class="stat-icon">🛒</div>
+        <div>
+            <h3 id="cartItemsCount">0</h3>
+            <p>Cart Items</p>
+        </div>
+    </div>
+
+    <!-- My Orders -->
+    <div class="stat-card">
+        <div class="stat-icon">📦</div>
+        <div>
+            <h3 id="myOrdersCount">0</h3>
+            <p>My Orders</p>
+        </div>
+    </div>
+
+    <!-- Active Orders -->
+    <div class="stat-card">
+        <div class="stat-icon">🚚</div>
+        <div>
+            <h3 id="activeOrdersCount">0</h3>
+            <p>Active Orders</p>
+        </div>
+    </div>
+
+    <!-- Total Spent -->
+    <div class="stat-card">
+        <div class="stat-icon">💰</div>
+        <div>
+            <h3 id="totalSpent">₹0</h3>
+            <p>Total Spent</p>
+        </div>
+    </div>
+
+</section>
+                
+                
+
+
+            <!-- Quick Actions -->
+            <section>
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Quick Actions</h2>
+
+                        <p>
+                            Access your shopping features quickly.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="quick-grid">
+
+                    <div class="quick-card">
+
+                        <div class="quick-icon">
+                            🛒
+                        </div>
+
+                        <h3>Browse Marketplace</h3>
+
+                        <p>
+                            Explore fresh products listed
+                            directly by farmers.
+                        </p>
+
+                        <button
+    onclick="window.location.href='marketplace.html'"
+>
+    Browse Products
+</button>
+
+                    </div>
+
+
+                    <div class="quick-card">
+
+                        <div class="quick-icon">
+                            🛍️
+                        </div>
+
+                        <h3>View Cart</h3>
+
+                        <p>
+                            Review your selected products
+                            before placing an order.
+                        </p>
+
+                        <button
+    onclick="window.location.href='cart.html'">
+    Open Cart
+</button>
+
+                    </div>
+
+
+                    <div class="quick-card">
+
+                        <div class="quick-icon">
+                            📦
+                        </div>
+
+                        <h3>Track Orders</h3>
+
+                        <p>
+                            Check your orders and delivery
+                            status.
+                        </p>
+
+                        <button
+    onclick="window.location.href='orders.html'">
+    View Orders
+</button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Marketplace Preview -->
+            <section class="marketplace-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>Fresh From Farmers</h2>
+
+                        <p>
+                            Products available in the AgroLink marketplace.
+                        </p>
+                    </div>
+
+                    <button
+    class="view-all-btn"
+    onclick="window.location.href='marketplace.html'"
+>
+    View Marketplace
+</button>
+
+                </div>
+
+
+                <div class="empty-marketplace">
+
+                    <div class="empty-icon">
+                        🌾
+                    </div>
+
+                    <h3>Marketplace is getting ready</h3>
+
+                    <p>
+                        Farmer products will appear here once
+                        they are added to AgroLink AI.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="consumer.js"></script>
+
+</body>
+
+</html>

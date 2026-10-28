@@ -1,0 +1,40 @@
+﻿# Python virtual environments
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Secrets and environment variables
+.env
+.env.*
+!.env.example
+*service-account*.json
+
+# PlantVillage dataset and large generated files
+ml/dataset/
+ml/*.keras
+ml/*.h5
+ml/*.hdf5
+ml/*.csv
+ml/gradcam_preview.png
+
+# Node.js dependencies
+node_modules/
+backend/node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Uploaded user files
+backend/uploads
+backend/uploads/

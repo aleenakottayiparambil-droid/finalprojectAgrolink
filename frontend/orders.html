@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Orders - AgroLink AI</title>
+
+    <link rel="stylesheet" href="consumer.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="logo-section">
+
+                <div class="logo-icon">
+                    🌱
+                </div>
+
+                <div>
+                    <h2>AgroLink AI</h2>
+                    <span>CONSUMER PORTAL</span>
+                </div>
+
+            </div>
+
+
+            <nav>
+
+                <button
+                    class="nav-item"
+                    onclick="window.location.href='consumer.html'">
+                    🏠
+                    <span>Dashboard</span>
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    onclick="window.location.href='marketplace.html'">
+                    🛒
+                    <span>Marketplace</span>
+                </button>
+
+
+                <button
+                    class="nav-item active">
+                    📦
+                    <span>My Orders</span>
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    onclick="window.location.href='cart.html'">
+                    🛍️
+                    <span>Cart</span>
+                </button>
+
+            </nav>
+
+
+            <button
+                id="logoutBtn"
+                class="logout-btn">
+                🚪 Logout
+            </button>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <div>
+
+                    <h1>My Orders</h1>
+
+                    <p>
+                        View and track your purchases.
+                    </p>
+
+                </div>
+
+
+                <div class="profile">
+
+                    <div class="profile-icon">
+                        👤
+                    </div>
+
+                    <span id="profileName">
+                        Consumer
+                    </span>
+
+                </div>
+
+            </header>
+
+
+            <!-- ORDERS -->
+            <section class="content-section">
+
+                <div id="ordersContainer">
+
+                    <div class="empty-marketplace">
+
+                        <div class="empty-icon">
+                            📦
+                        </div>
+
+                        <h3>No orders yet</h3>
+
+                        <p>
+                            Your placed orders will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="orders.js"></script>
+
+</body>
+
+</html>

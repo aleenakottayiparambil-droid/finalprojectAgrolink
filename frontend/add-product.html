@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AgroLink AI - Add Product</title>
+
+    <link rel="stylesheet" href="farmer.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+        <aside class="sidebar">
+
+            <div class="logo-section">
+
+                <div class="logo-icon">
+                    🌱
+                </div>
+
+                <div>
+                    <h2>AgroLink AI</h2>
+                    <span>FARMER PORTAL</span>
+                </div>
+
+            </div>
+
+
+            <nav>
+
+                <button
+                    class="nav-item"
+                    onclick="window.location.href='farmer.html'"
+                >
+                    🏠
+                    <span>Dashboard</span>
+                </button>
+
+
+                <button class="nav-item active">
+
+                    ➕
+                    <span>Add Product</span>
+
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    onclick="window.location.href='my-products.html'"
+                >
+                    📦
+                    <span>My Products</span>
+                </button>
+
+
+                <button class="nav-item">
+
+                    🛒
+                    <span>Orders</span>
+
+                </button>
+
+
+                <button class="nav-item">
+
+                    🌾
+                    <span>Government Schemes</span>
+
+                </button>
+
+
+                <button class="nav-item">
+
+                    🔬
+                    <span>Crop Disease Detection</span>
+
+                </button>
+
+            </nav>
+
+
+            <button
+                id="logoutBtn"
+                class="logout-btn"
+            >
+                🚪 Logout
+            </button>
+
+        </aside>
+
+
+
+        <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+        <main class="main-content">
+
+
+            <!-- TOP BAR -->
+
+            <header class="topbar">
+
+                <div>
+
+                    <h1>
+                        Add New Product
+                    </h1>
+
+                    <p>
+                        List your agricultural products
+                        for consumers.
+                    </p>
+
+                </div>
+
+
+                <div class="profile">
+
+                    <div class="profile-icon">
+                        👨‍🌾
+                    </div>
+
+                    <span id="profileName">
+                        Farmer
+                    </span>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =========================
+                 PRODUCT FORM SECTION
+            ========================== -->
+
+            <section class="section">
+
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Product Details
+                        </h2>
+
+                        <p>
+                            Enter accurate information about
+                            the product you want to sell.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FORM CARD -->
+
+                <div class="product-form-card">
+
+
+                    <form
+                        id="productForm"
+                        class="product-form"
+                    >
+
+
+                        <!-- ROW 1 -->
+
+                        <div class="form-row">
+
+
+                            <div class="form-group">
+
+                                <label for="productName">
+
+                                    Product Name
+                                    <span class="required">
+                                        *
+                                    </span>
+
+                                </label>
+
+
+                                <input
+                                    type="text"
+                                    id="productName"
+                                    placeholder="e.g. Tomato"
+                                    required
+                                >
+
+                            </div>
+
+
+
+                            <div class="form-group">
+
+                                <label for="category">
+
+                                    Category
+                                    <span class="required">
+                                        *
+                                    </span>
+
+                                </label>
+
+
+                                <select
+                                    id="category"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Select category
+                                    </option>
+
+                                    <option value="Vegetables">
+                                        Vegetables
+                                    </option>
+
+                                    <option value="Fruits">
+                                        Fruits
+                                    </option>
+
+                                    <option value="Grains">
+                                        Grains
+                                    </option>
+
+                                    <option value="Spices">
+                                        Spices
+                                    </option>
+
+                                    <option value="Other">
+                                        Other
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ROW 2 -->
+
+                        <div class="form-row">
+
+
+                            <div class="form-group">
+
+                                <label for="quantity">
+
+                                    Quantity
+                                    <span class="required">
+                                        *
+                                    </span>
+
+                                </label>
+
+
+                                <input
+                                    type="number"
+                                    id="quantity"
+                                    min="0.01"
+                                    step="0.01"
+                                    placeholder="e.g. 100"
+                                    required
+                                >
+
+                            </div>
+
+
+
+                            <div class="form-group">
+
+                                <label for="unit">
+                                    Unit
+                                </label>
+
+
+                                <select id="unit">
+
+                                    <option value="kg">
+                                        Kilogram (kg)
+                                    </option>
+
+                                    <option value="quintal">
+                                        Quintal
+                                    </option>
+
+                                    <option value="piece">
+                                        Piece
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ROW 3 -->
+
+                        <div class="form-row">
+
+
+                            <div class="form-group">
+
+                                <label for="price">
+
+                                    Price per Unit (₹)
+                                    <span class="required">
+                                        *
+                                    </span>
+
+                                </label>
+
+
+                                <input
+                                    type="number"
+                                    id="price"
+                                    min="0.01"
+                                    step="0.01"
+                                    placeholder="e.g. 40"
+                                    required
+                                >
+
+                            </div>
+
+
+
+                            <div class="form-group">
+
+                                <label for="location">
+                                    Location
+                                </label>
+
+
+                                <input
+                                    type="text"
+                                    id="location"
+                                    placeholder="e.g. Palakkad, Kerala"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- DESCRIPTION -->
+
+                        <div class="form-group">
+
+                            <label for="description">
+                                Description
+                            </label>
+
+
+                            <textarea
+                                id="description"
+                                placeholder="Describe your product..."
+                            ></textarea>
+
+                        </div>
+
+
+
+                        <!-- BUTTONS -->
+
+                        <div class="product-button-row">
+
+
+                            <button
+                                type="submit"
+                                class="product-submit-btn"
+                            >
+                                Add Product
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="product-cancel-btn"
+                                onclick="window.location.href='farmer.html'"
+                            >
+                                Cancel
+                            </button>
+
+
+                        </div>
+
+
+                    </form>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="add-product.js"></script>
+
+</body>
+
+</html>

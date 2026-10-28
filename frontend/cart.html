@@ -1,0 +1,210 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cart - AgroLink AI</title>
+
+    <link rel="stylesheet" href="consumer.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="logo-section">
+
+                <div class="logo-icon">
+                    🌱
+                </div>
+
+                <div>
+                    <h2>AgroLink AI</h2>
+                    <span>Smart Agriculture</span>
+                </div>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <button
+                    class="nav-item"
+                    onclick="window.location.href='consumer.html'">
+
+                    🏠
+                    <span>Dashboard</span>
+
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    onclick="window.location.href='marketplace.html'">
+
+                    🛒
+                    <span>Marketplace</span>
+
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    onclick="window.location.href='orders.html'">
+
+                    📦
+                    <span>My Orders</span>
+
+                </button>
+
+
+                <button
+                    class="nav-item active">
+
+                    🛍️
+                    <span>Cart</span>
+
+                </button>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <button
+                    class="logout-btn"
+                    id="logoutBtn">
+
+                    🚪
+                    <span>Logout</span>
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+
+            <!-- TOP BAR -->
+            <header class="topbar">
+
+                <div>
+
+                    <h1>My Cart</h1>
+
+                    <p>
+                        Review your selected products
+                    </p>
+
+                </div>
+
+
+                <div class="profile-area">
+
+                    <div class="profile-avatar">
+                        👤
+                    </div>
+
+                    <div>
+
+                        <strong id="profileName">
+                            Consumer
+                        </strong>
+
+                        <span>
+                            Consumer
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- CART CONTENT -->
+            <section class="content-section">
+
+
+                <!-- CART PRODUCTS -->
+                <div id="cartContainer">
+
+                    <div class="empty-marketplace">
+
+                        <div class="empty-icon">
+                            🛒
+                        </div>
+
+                        <h3>
+                            Your cart is empty
+                        </h3>
+
+                        <p>
+                            Products you add from the marketplace
+                            will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PLACE ORDER -->
+                <div
+                    id="orderSection"
+                    class="order-section">
+
+                    <h2>
+                        Place Your Order
+                    </h2>
+
+                    <p>
+                        Enter your delivery address to place
+                        this order.
+                    </p>
+
+
+                    <textarea
+                        id="deliveryAddress"
+                        placeholder="Enter your complete delivery address"
+                        rows="3"></textarea>
+
+
+                    <button
+                        id="placeOrderBtn"
+                        class="place-order-btn">
+
+                        Place Order
+
+                    </button>
+
+                </div>
+
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="cart.js"></script>
+
+</body>
+
+</html>
+```
+
+Save `cart.html`.
+
+**Don't test Place Order yet**—the button needs its JavaScript and styling next.

@@ -1,0 +1,342 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AgroLink AI - Farmer Dashboard</title>
+
+    <link rel="stylesheet" href="farmer.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            🌱 AgroLink <span>AI</span>
+        </div>
+
+        <p class="role-label">FARMER PORTAL</p>
+
+        <nav>
+            <button class="nav-item active"
+                    onclick="window.location.href='farmer.html'">
+                🏠 Dashboard
+            </button>
+
+            <button class="nav-item"
+                    onclick="window.location.href='marketplace.html'">
+                🛒 Marketplace
+            </button>
+
+            <button class="nav-item"
+                    onclick="window.location.href='my-products.html'">
+                📦 <span>My Products</span>
+            </button>
+
+            <button class="nav-item"
+                    onclick="window.location.href='farmer-orders.html'">
+                📦 <span>Orders</span>
+            </button>
+
+            <button class="nav-item"
+                    onclick="alert('Government Schemes feature will be connected next.')">
+                🏛️ Government Schemes
+            </button>
+
+            <button class="nav-item"
+                    id="diseaseNavBtn"
+                    type="button">
+                🌿 Crop Disease Detection
+            </button>
+        </nav>
+
+        <button class="logout-btn" id="logoutBtn">
+            🚪 Logout
+        </button>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="topbar">
+
+            <div>
+                <p class="welcome-small">Farmer Dashboard</p>
+                <h1 id="farmerName">Welcome, Farmer</h1>
+            </div>
+
+            <div class="profile">
+                <div class="profile-icon">👨‍🌾</div>
+
+                <div>
+                    <strong id="profileName">Farmer</strong>
+                    <small>Farmer Account</small>
+                </div>
+            </div>
+
+        </header>
+
+        <!-- STATISTICS -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-icon">🌾</div>
+                <div>
+                    <p>Total Products</p>
+                    <h2 id="totalProducts">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">📦</div>
+                <div>
+                    <p>Pending Orders</p>
+                    <h2 id="pendingOrders">0</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">💰</div>
+                <div>
+                    <p>Total Earnings</p>
+                    <h2 id="totalEarnings">₹0.00</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🛒</div>
+                <div>
+                    <p>Products Sold</p>
+                    <h2 id="productsSold">0</h2>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- QUICK ACTIONS -->
+        <section class="section">
+
+            <div class="section-header">
+                <div>
+                    <h2>Quick Actions</h2>
+                    <p>Manage your farming activities</p>
+                </div>
+            </div>
+
+            <div class="action-grid">
+
+                <div class="action-card">
+                    <div class="action-icon">➕</div>
+                    <h3>Add Product</h3>
+                    <p>List your agricultural products in the marketplace.</p>
+                    <button onclick="window.location.href='add-product.html'">
+                        Add Product
+                    </button>
+                </div>
+
+                <div class="action-card">
+                    <div class="action-icon">📦</div>
+                    <h3>View Orders</h3>
+                    <p>Check and manage customer orders.</p>
+                    <button onclick="window.location.href='farmer-orders.html'">
+                        View Orders →
+                    </button>
+                </div>
+
+                <div class="action-card">
+                    <div class="action-icon">🌿</div>
+                    <h3>Detect Crop Disease</h3>
+                    <p>Upload a crop leaf image, predict a possible disease, and view the AI explanation.</p>
+                    <button id="diseaseQuickBtn" type="button">
+                        Detect Disease →
+                    </button>
+                </div>
+
+                <div class="action-card">
+                    <div class="action-icon">🏛️</div>
+                    <h3>Government Schemes</h3>
+                    <p>Find government schemes suitable for your farm.</p>
+                    <button onclick="alert('Government Schemes feature will be connected next.')">
+                        Explore Schemes →
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CROP DISEASE DETECTION -->
+        <section class="section" id="diseaseDetectionSection" hidden>
+
+            <div class="section-header">
+                <div>
+                    <h2>🌿 Crop Disease Detection</h2>
+                    <p>
+                        Upload a clear crop leaf image to obtain a CNN prediction,
+                        a Grad-CAM heatmap, and a text explanation of the prediction.
+                    </p>
+                </div>
+            </div>
+
+            <div class="disease-card">
+
+                <form id="diseaseForm">
+
+                    <div class="form-group">
+                        <label for="cropImage">Select Crop Leaf Image</label>
+
+                        <input
+                            type="file"
+                            id="cropImage"
+                            name="image"
+                            accept="image/*"
+                            required
+                        >
+                    </div>
+
+                    <!-- ORIGINAL IMAGE PREVIEW -->
+                    <div id="imagePreviewContainer" hidden>
+                        <h3>Uploaded Leaf Image</h3>
+
+                        <img
+                            id="imagePreview"
+                            alt="Preview of the uploaded crop leaf"
+                        >
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                        id="detectDiseaseBtn"
+                    >
+                        Detect Disease
+                    </button>
+
+                </form>
+
+                <p id="diseaseStatus" role="status" aria-live="polite"></p>
+
+                <!-- PREDICTION RESULT -->
+                <div id="diseaseResult" class="disease-result" hidden>
+
+                    <h3>Prediction Result</h3>
+
+                    <p>
+                        <strong>Predicted class:</strong>
+                        <span id="predictedDisease"></span>
+                    </p>
+
+                    <p>
+                        <strong>Model confidence:</strong>
+                        <span id="diseaseConfidence"></span>
+                    </p>
+
+                    <!-- XAI TEXT EXPLANATION -->
+                    <section class="xai-explanation" aria-labelledby="xaiHeading">
+
+                        <h3 id="xaiHeading">Why this prediction?</h3>
+
+                        <p>
+                            This explanation describes the CNN's prediction
+                            and the image regions that influenced it.
+                        </p>
+
+                        <div id="xaiExplanation" aria-live="polite">
+                            The text explanation will appear here after
+                            the disease prediction is completed.
+                        </div>
+
+                    </section>
+
+                    <!-- GRAD-CAM VISUAL EXPLANATION -->
+                    <section class="gradcam-section" aria-labelledby="gradcamHeading">
+
+                        <h3 id="gradcamHeading">Grad-CAM Heatmap</h3>
+
+                        <p>
+                            The heatmap highlights image regions that contributed
+                            to the CNN's prediction. Warmer colours generally
+                            indicate stronger positive contributions.
+                        </p>
+
+                        <div class="gradcam-image-container">
+
+                            <img
+                                id="gradcamImage"
+                                alt="Grad-CAM overlay highlighting image regions that influenced the CNN prediction"
+                                hidden
+                            >
+
+                        </div>
+
+                        <p class="disease-note">
+                            Grad-CAM shows where the model focused. It does not
+                            independently confirm the disease or identify exact
+                            symptoms.
+                        </p>
+
+                    </section>
+
+                    <!-- CURRENT XAI VERSION -->
+                    <p class="disease-note">
+                        Current version: CNN prediction and Grad-CAM-based
+                        explanation without RAG. Disease-specific knowledge
+                        retrieval can be integrated in a future version.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- MARKETPLACE PREVIEW -->
+        <section class="section">
+
+            <div class="section-header">
+                <div>
+                    <h2>Your Marketplace</h2>
+                    <p>Your recently listed products</p>
+                </div>
+
+                <button
+                    class="outline-btn"
+                    onclick="window.location.href='my-products.html'">
+                    View All
+                </button>
+            </div>
+
+            <div class="empty-state">
+
+                <div class="empty-icon">🌾</div>
+
+                <h3>Your Products</h3>
+
+                <p>
+                    Manage your agricultural products through AgroLink AI.
+                </p>
+
+                <button
+                    class="primary-btn"
+                    onclick="window.location.href='add-product.html'">
+                    + Add Product
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="farmer.js"></script>
+
+</body>
+
+</html>
